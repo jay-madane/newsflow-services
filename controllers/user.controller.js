@@ -62,7 +62,7 @@ const registerUser = asyncHandler( async (req, res) => {
         avatar: avatar.url
     });
 
-    // remove password and refreshToekn fields from response
+    // remove password and refreshToken fields from response
     const createdUser = await User.findById(user._id).select(
         "-password -refreshToken"
     );

@@ -39,7 +39,7 @@ const calculateSentimentAverage = async () => {
 const insertDailyAvg = asyncHandler( async (req, res) => {
     try {
         const sentiments = await calculateSentimentAverage();
-        const dailyAverage = DailyAverage.create({
+        const dailyAverage = await DailyAverage.create({
             tonality: sentiments.map(sentiment => ({
                 name: sentiment.tonality,
                 percentage: sentiment.percentage
