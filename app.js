@@ -17,11 +17,10 @@ app.use(cookieParser());
 // routes
 import userRouter from "./routes/user.routes.js";
 import newsRouter from "./routes/news.routes.js";
-import { sendEmails } from "./utils/email.js";
+import emailRouter from "./routes/email.routes.js";
 
 app.use("/api/v1/users", userRouter); // user login, registration and info endpoints
 app.use("/api/v1/news", newsRouter); // news endpoint
-
-sendEmails();
+app.use("/api/v1/email", emailRouter); // email endpoint for github actions cron
 
 export { app };
