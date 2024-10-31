@@ -1,12 +1,13 @@
-name: Daily Email Scheduler
+name: Daily Email Scheduler CRON Job
 
 on:
-    schedule:
-        - cron: '50 17 * * *'
+  schedule:
+    - cron: '* 13 * * *'
 
 jobs:
-    trigger-email:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Send Daily Email Notifications
-              run: curl -X GET https://newsflowservices.vercel.app/api/v1/email/postAllEmails
+  trigger-email:
+      runs-on: ubuntu-latest
+      container: alpine/curl
+      steps:
+        - name: Send Daily Email Notifications
+          run: curl -X GET https://newsflowservices.vercel.app/api/v1/email/postAllEmails
