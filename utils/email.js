@@ -361,7 +361,16 @@ const sendEmails = async () => {
                 html: emailContent
             }
 
-            transporter.sendMail(mailOptions);
+            await new Promise((resolve, reject) => {
+                transporter.sendMail(mailOptions, (err, info) => {
+                    if (err) {
+                        console.error(err);
+                        reject(err);
+                    } else {
+                        resolve(info);
+                    }
+                });
+            });
         }
     } catch (error) {
         console.error("Mail not sent: ", error);
