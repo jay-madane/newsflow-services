@@ -2,7 +2,7 @@ name: Daily Email Scheduler CRON Job
 
 on:
   schedule:
-    - cron: '* 13 * * *'
+    - cron: '30 13 * * *'
 
 jobs:
   trigger-email:
