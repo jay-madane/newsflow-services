@@ -11,3 +11,6 @@ jobs:
       steps:
         - name: Send Daily Email Notifications
           run: curl -X GET https://newsflowservices.vercel.app/api/v1/email/postAllEmails
+        
+        - name: Insert Daily Avg in Database
+          run: curl -X POST https://newsflowservices.vercel.app/api/v1/news/insertDailyAvg

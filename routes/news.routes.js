@@ -12,7 +12,7 @@ const router = Router();
 // secured routes
 router.route("/allNews").get(verifyJWT, getAllNews);
 
-router.route("/insertDailyAvg").post(verifyJWT, insertDailyAvg);
+router.route("/insertDailyAvg").post(insertDailyAvg);
 
 router.route("/getAreaChartData").get(verifyJWT, getAreaChartData);
 
