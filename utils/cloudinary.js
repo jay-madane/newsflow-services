@@ -8,25 +8,21 @@ cloudinary.config({
 });
 
 const uploadOnCloudinary = async (fileBuffer) => {
-    try {
-        if(!fileBuffer) return null;
-
-        // upload file on cloudinary
-        const uploadResult = await cloudinary.uploader.upload_stream({
-            resource_type: "auto"
-        }, (error, result)=>{
-            if(error) throw error;
-            return result;
-        });
-
-        const stream = cloudinary.uploader.upload_stream();
+    return new Promise((resolve, reject) => {
+        // start the cloudinary upload stream
+        const stream = cloudinary.uploader.upload_stream(
+            { resource_type: "auto" },
+            (error, result) => {
+                if (error) {
+                    console.error("Cloudinary upload error:", error);
+                    reject(error);
+                } else {
+                    resolve(result);
+                }
+            }
+        );
         stream.end(fileBuffer);
-
-        return uploadResult;
-    } catch (error) {
-        console.error("Cloudinary upload error: ", error);
-        return null;
-    }
+    });
 }
 
 const deleteOnCloudinary = async (publicId) => {
@@ -41,4 +37,9 @@ const deleteOnCloudinary = async (publicId) => {
     }
 }
 
-export { uploadOnCloudinary, deleteOnCloudinary };
+const getPublicIdFromUrl = (url) => {
+    const parts = url.split('/');
+    return parts[parts.length - 1].split('.')[0];
+};
+
+export { uploadOnCloudinary, deleteOnCloudinary, getPublicIdFromUrl };
