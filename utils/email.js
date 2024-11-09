@@ -289,7 +289,7 @@ const sendEmails = async () => {
             <!--[if !mso]>-->
             <td class="t22" style="background-color:#6B84FF;overflow:hidden;width:246px;text-align:center;line-height:48px;mso-line-height-rule:exactly;mso-text-raise:11px;border-radius:40px 40px 40px 40px;">
             <!--<![endif]-->
-            <a class="t21" href="http://localhost:3001" style="display:block;margin:0;Margin:0;font-family:Montserrat,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;line-height:48px;font-weight:800;font-style:normal;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px;direction:ltr;color:#FFFFFF;text-align:center;mso-line-height-rule:exactly;mso-text-raise:11px;" target="_blank">Check out Now</a></td>
+            <a class="t21" href="https://newsflow-ashy.vercel.app" style="display:block;margin:0;Margin:0;font-family:Montserrat,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Arial,sans-serif;line-height:48px;font-weight:800;font-style:normal;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px;direction:ltr;color:#FFFFFF;text-align:center;mso-line-height-rule:exactly;mso-text-raise:11px;" target="_blank">Check out Now</a></td>
             </tr></table>
             </td></tr></table></td>
             </tr></table>
